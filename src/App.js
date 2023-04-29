@@ -4,6 +4,8 @@ import { useState } from "react";
 function App() {
   const[weight ,setweight] = useState(0);
   const[height ,setheight] = useState(0);
+  const[bmi ,setbmi] = useState("");
+  const[message ,setmessage] = useState("");
   return (
     <div className="App">
       <div className="container">
@@ -36,10 +38,10 @@ function App() {
             <button className="btn btn-outline-success my-2">Reload</button>
           </div>
           <div className="center">
-            <h3>Your BMI is:</h3>
+            <h3>Your BMI is:{bmi}</h3>
           </div>
           <div className="center">
-            <h3>Your are:</h3>
+            <h3>Your are:{message}</h3>
           </div>
         </form>
       </div>
