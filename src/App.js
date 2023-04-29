@@ -18,7 +18,7 @@ function App() {
               name=""
               id=""
               placeholder="Enter your Weight"
-            value={weight}
+            value={weight} onChange={(e) => setweight(e.target.value)}
             />
           </div>
           <div>
@@ -29,6 +29,7 @@ function App() {
               id=""
               placeholder="Enter your height"
               value={height}
+              onChange={(e) => setheight(e.target.value)}
             />
           </div>
           <div>
