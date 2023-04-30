@@ -6,6 +6,34 @@ function App() {
   const[height ,setheight] = useState(0);
   const[bmi ,setbmi] = useState("");
   const[message ,setmessage] = useState("");
+
+  const Submit= (e) =>{
+    e.preventDefault();
+    if(weight <=0 || height <=0 ){
+      alert("Please enter a Valid Weight and Height")
+    }
+    else{
+      const bmi = ((weight / (height*height))*703);
+      setbmi(bmi.toFixed(1));
+
+      if(bmi<2.5){
+        setmessage("Your are under Weight");
+      }
+      else if(bmi>=2.5 && bmi<=3.0){
+        setmessage("Your are Healthy");
+      }
+      else{
+        setmessage("Your are Over Weight");
+      }
+    }
+  }
+  const clear =() =>{
+    let newtext = 0 ;
+    setweight(newtext);
+    setheight(newtext);
+  }
+
+
   return (
     <div className="App">
       <div className="container">
@@ -26,23 +54,21 @@ function App() {
             <input
               type="text"
               name=""
-              id=""
+              id="height"
               placeholder="Enter your height"
               value={height}
               onChange={(e) => setheight(e.target.value)}
             />
           </div>
-          <div>
-            <button className="btn btn-outline-success my-2">Submit</button>
-          </div>
-          <div>
-            <button className="btn btn-outline-success my-2">Reload</button>
+          <div className="con">
+            <button className="btn btn-outline-success my-2 mx-4" onClick={Submit}>Submit</button>
+            <button className="btn btn-outline-success my-2" onClick={clear}>clear</button>
           </div>
           <div className="center">
-            <h3>Your BMI is:{bmi}</h3>
+            <h5>Your BMI is:{bmi}</h5>
           </div>
           <div className="center">
-            <h3>Your are:{message}</h3>
+            <h5>{message}</h5>
           </div>
         </form>
       </div>
