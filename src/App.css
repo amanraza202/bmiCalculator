@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  color: black;
 }
 body{
   background-color: azure;
@@ -22,4 +23,7 @@ body{
 
 .center{
   margin-left: 78px;
+}
+.btn{
+  color: black;
 }
